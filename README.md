@@ -19,11 +19,20 @@ Requires Node 22 (see `.nvmrc`).
 
 ```bash
 npm install
-cp .env.example .env.local
 npm run dev
 ```
 
 Open http://localhost:3000.
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Pushes to `main` deploy to
+production, and every PR gets a preview URL.
+
+The site URL (for metadata and link previews) is resolved in
+`src/lib/site.ts`: `NEXT_PUBLIC_SITE_URL` if set, otherwise Vercel's
+production domain, otherwise `http://localhost:3000`. No environment
+variables are required.
 
 ## Scripts
 
